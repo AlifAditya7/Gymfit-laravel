@@ -40,25 +40,25 @@
             <i class="fa fa-search"></i>
         </div>
         <nav class="canvas-menu mobile-menu">
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./about-us.html">About Us</a></li>
-                <li><a href="./classes.html">Classes</a></li>
-                <li><a href="./services.html">Services</a></li>
-                <li><a href="./team.html">Our Team</a></li>
-                <li><a href="#">Pages</a>
-                    <ul class="dropdown">
-                        <li><a href="./about-us.html">About us</a></li>
-                        <li><a href="./class-timetable.html">Classes timetable</a></li>
-                        <li><a href="./bmi-calculator.html">Bmi calculate</a></li>
-                        <li><a href="./team.html">Our team</a></li>
-                        <li><a href="./gallery.html">Gallery</a></li>
-                        <li><a href="./blog.html">Our blog</a></li>
-                        <li><a href="./404.html">404</a></li>
-                    </ul>
-                </li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
+        <ul>
+            <li class="active"><a href="./index.html">Home</a></li>
+            <li><a href="./about-us.html">Exercise</a></li>
+            <li><a href="./class-details.html">Nutrition</a></li>
+            <li><a href="./team.html">Profile</a></li>
+            <li><a href="#">Other</a>
+                <ul class="dropdown">
+                    <li><a href="#">BMI Calculate</a></li>
+                    <li><a href="{{ route('login') }}">Log In</a></li>
+                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        {{ __('Log out') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form></li>
+                </ul>
+            </li>
+        </ul>
         </nav>
     </div>
     <!-- Offcanvas Menu Section End -->
@@ -80,13 +80,26 @@
                             <li class="active"><a href="./index.html">Home</a></li>
                             <li><a href="./about-us.html">Exercise</a></li>
                             <li><a href="./class-details.html">Nutrition</a></li>
-                            <li><a href="./services.html">Location</a></li>
                             <li><a href="./team.html">Profile</a></li>
                             <li><a href="#">Other</a>
+                            @if (Route::has('login') || Route::has('register'))
                                 <ul class="dropdown">
+                                @auth
+                                    <li><a href="#">BMI Calculate</a></li>
+                                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        {{ __('Log out') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form></li>
+                                @else
                                     <li><a href="{{ route('login') }}">Log In</a></li>
-                                    <li><a href="{{ route('logout') }}">Log Out</a></li>
+                                    @if (Route::has('register'))
+                                        <li><a href="{{ route('register') }}">Sign Up</a></li>
+                                    @endif
+                                @endauth
                                 </ul>
+                            @endif
                             </li>
                         </ul>
                     </nav>
@@ -530,15 +543,6 @@
                                 <li>20 Comment</li>
                             </ul>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="copyright-text">
-                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
             </div>
