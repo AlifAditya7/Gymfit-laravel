@@ -28,3 +28,7 @@ Route::get('/exercise', function () {
 Route::get('/nutrisi', function () {
     return view('nutrisi');
 });
+
+Route::get('/bmi', function () {
+    return view('bmi');
+});

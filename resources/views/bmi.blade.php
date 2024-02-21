@@ -7,7 +7,7 @@
     <meta name="keywords" content="Gym, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Exercise</title>
+    <title>Gym | Template</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/style.css" type="text/css">
-
 </head>
 
 <body>
@@ -79,14 +78,14 @@
                     <nav class="nav-menu">
                         <ul>
                             <li><a href="{{ url('/') }}">Home</a></li>
-                            <li  class="active"><a href="{{ url('/exercise') }}">Exercise</a></li>
+                            <li><a href="{{ url('/exercise') }}">Exercise</a></li>
                             <li><a href="{{ url('/nutrisi') }}">Nutrition</a></li>
                             <li><a href="./team.html">Profile</a></li>
                             <li><a href="#">Other</a>
                             @if (Route::has('login') || Route::has('register'))
                                 <ul class="dropdown">
                                 @auth
-                                    <li><a href="#">BMI Calculate</a></li>
+                                    <li><a href="{{ url('/bmi') }}">BMI Calculate</a></li>
                                     <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('Log out') }}
                                     </a>
@@ -109,16 +108,17 @@
         </div>
     </header>
     <!-- Header End -->
+
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="<?php echo url('gymlife'); ?>/img/breadcrumb-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb-text">
-                        <h2>Exercise</h2>
+                        <h2>BMI calculator</h2>
                         <div class="bt-option">
                             <a href="{{ url('/') }}">Home</a>
-                            <span href="{{ url('/exercise') }}">Exercise</span>
+                            <span href="#">BMI calculator</span>
                         </div>
                     </div>
                 </div>
@@ -127,107 +127,78 @@
     </section>
     <!-- Breadcrumb Section End -->
 
-    <!-- Class Timetable Section Begin -->
-    <section class="class-timetable-section spad">
+    <!-- BMI Calculator Section Begin -->
+    <section class="bmi-calculator-section spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="section-title">
-                        <span>Find Your Suitable Exercise</span>
-                        <h2> Find Your BMI First</h2>
+                    <div class="section-title chart-title">
+                        <span>check your body</span>
+                        <h2>BMI CALCULATOR CHART</h2>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="table-controls">
-                        <ul>
-                            <li class="active" data-tsfilter="all">All event</li>
-                            <li data-tsfilter="underweight">Underweight</li>
-                            <li data-tsfilter="ideal">Ideal</li>
-                            <li data-tsfilter="Overweight">Overweight</li>
-                            <li data-tsfilter="Obesitas">Obesitas</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="class-timetable">
+                    <div class="chart-table">
                         <table>
-                            <tbody>
-                                <!-- PowerLifting -->
+                            <thead>
                                 <tr>
-                                    <td class="class-time">PowerLifting</td>
-                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
-                                        <h5>WEIGHT LOOSE</h5>
-                                        <span>RLefew D. Loee</span>
-                                    </td>
-                                    <td class="hover-bg ts-meta" data-tsmeta="fitness">
-                                        <h5>Cardio</h5>
-                                        <span>RLefew D. Loee</span>
-                                    </td>
-                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
-                                        <h5>Yoga</h5>
-                                        <span>Keaf Shen</span>
-                                    </td>
-                                    <td class="hover-bg ts-meta" data-tsmeta="fitness">
-                                        <h5>Fitness</h5>
-                                        <span>Kimberly Stone</span>
-                                    </td>
-                                    <td class="dark-bg blank-td"></td>
-                                    <td class="hover-bg ts-meta" data-tsmeta="motivation">
-                                        <h5>Boxing</h5>
-                                        <span>Rachel Adam</span>
-                                    </td>
-                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
-                                        <h5>Body Building</h5>
-                                        <span>Robert Cage</span>
-                                    </td>
+                                    <th>Bmi</th>
+                                    <th>WEIGHT STATUS</th>
                                 </tr>
-                                <!-- medium -->
+                            </thead>
+                            <tbody>
                                 <tr>
-                                    <td class="class-time">BodyBuilder</td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="fitness">
-                                        <h5>Fitness</h5>
-                                        <span>Kimberly Stone</span>
-                                    </td>
-                                    <td class="hover-bg ts-meta" data-tsmeta="workout">
-                                        <h5>WEIGHT LOOSE</h5>
-                                        <span>RLefew D. Loee</span>
-                                    </td>
-                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="motivation">
-                                        <h5>Cardio</h5>
-                                        <span>RLefew D. Loee</span>
-                                    </td>
-                                    <td class="hover-bg ts-meta" data-tsmeta="workout">
-                                        <h5>Body Building</h5>
-                                        <span>Robert Cage</span>
-                                    </td>
-                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="motivation">
-                                        <h5>Karate</h5>
-                                        <span>Donald Grey</span>
-                                    </td>
-                                    <td class="blank-td"></td>
+                                    <td class="point">Below 18.5</td>
+                                    <td>Underweight</td>
+                                </tr>
+                                <tr>
+                                    <td class="point">18.5 - 24.9</td>
+                                    <td>Healthy</td>
+                                </tr>
+                                <tr>
+                                    <td class="point">25.0 - 29.9</td>
+                                    <td>Overweight</td>
+                                </tr>
+                                <tr>
+                                    <td class="point">30.0 - and Above</td>
+                                    <td>Obese</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
+                <div class="col-lg-6">
+                    <div class="section-title chart-calculate-title">
+                        <span>check your body</span>
+                        <h2>CALCULATE YOUR BMI</h2>
+                    </div>
+                    <div class="chart-calculate-form">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                            viverra maecenas accumsan lacus vel facilisis.</p>
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="text" placeholder="Height / cm">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" placeholder="Weight / kg">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" placeholder="Age">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" placeholder="Sex">
+                                </div>
+                                <div class="col-lg-12">
+                                    <button type="submit">Calculate</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!-- Class Timetable Section End -->
-
-    <!-- Search model Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
-    </div>
-    <!-- Search model end -->
+    <!-- BMI Calculator Section End -->
 
     <!-- **** All JS Files ***** -->
     <script src="<?php echo url('alimie'); ?>/js/jquery.min.js"></script>
