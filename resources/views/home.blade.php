@@ -77,8 +77,8 @@
                 <div class="col-lg-6">
                     <nav class="nav-menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./about-us.html">Exercise</a></li>
+                            <li class="active"><a href="{{ url('/') }}">Home</a></li>
+                            <li><a href="{{ url('/exercise') }}">Exercise</a></li>
                             <li><a href="./class-details.html">Nutrition</a></li>
                             <li><a href="./team.html">Profile</a></li>
                             <li><a href="#">Other</a>
