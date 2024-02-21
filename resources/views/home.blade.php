@@ -570,10 +570,7 @@
     <script src="<?php echo url('gymlife'); ?>/js/jquery.slicknav.js"></script>
     <script src="<?php echo url('gymlife'); ?>/js/owl.carousel.min.js"></script>
     <script src="<?php echo url('gymlife'); ?>/js/main.js"></script>
-    <script src="<?php echo url('alimie'); ?>/js/jquery.min.js"></script>
-    <script src="<?php echo url('alimie'); ?>/js/popper.min.js"></script>
-    <script src="<?php echo url('alimie'); ?>/js/alime.bundle.js"></script>
-    <script src="<?php echo url('alimie'); ?>/js/default-assets/active.js"></script>
+    
 
 
 </body>
