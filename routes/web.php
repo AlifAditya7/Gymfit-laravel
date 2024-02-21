@@ -24,3 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/exercise', function () {
     return view('exercise');
 });
+
+Route::get('/nutrisi', function () {
+    return view('nutrisi');
+});

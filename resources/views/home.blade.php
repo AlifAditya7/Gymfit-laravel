@@ -79,7 +79,7 @@
                         <ul>
                             <li class="active"><a href="{{ url('/') }}">Home</a></li>
                             <li><a href="{{ url('/exercise') }}">Exercise</a></li>
-                            <li><a href="./class-details.html">Nutrition</a></li>
+                            <li><a href="{{ url('/nutrisi') }}">Nutrition</a></li>
                             <li><a href="./team.html">Profile</a></li>
                             <li><a href="#">Other</a>
                             @if (Route::has('login') || Route::has('register'))

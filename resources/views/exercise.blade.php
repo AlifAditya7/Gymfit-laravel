@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
+<html lang="zxx">
+
+<head>
     <meta charset="UTF-8">
     <meta name="description" content="Gym Template">
     <meta name="keywords" content="Gym, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise</title>
 
-        <!-- Title -->
-        <title>Exercise</title>
-
-        <!-- Favicon -->
-        <link rel="icon" href="./img/core-img/favicon.png" />
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
 
         <!-- Css Styles -->
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/bootstrap.min.css" type="text/css">
@@ -22,503 +22,229 @@
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/style.css" type="text/css">
-    <link rel="stylesheet" href="<?php echo url('alimie'); ?>/css/style.css" type="text/css">
-    </head>
 
-    <body>
-        <!-- Page Preloder -->
+</head>
 
-        <!-- Offcanvas Menu Section Begin -->
-        <div class="offcanvas-menu-overlay"></div>
-        <div class="offcanvas-menu-wrapper">
-            <div class="canvas-close">
-                <i class="fa fa-close"></i>
-            </div>
-            <div class="canvas-search search-switch">
-                <i class="fa fa-search"></i>
-            </div>
-            <nav class="canvas-menu mobile-menu">
-                <ul>
-                    <li><a href="{{ url('/') }}">Home</a></li>
-                    <li class="active"><a href="{{ url('/exercise') }}">Exercise</a></li>
-                    <li><a href="./class-details.html">Nutrition</a></li>
-                    <li><a href="./team.html">Profile</a></li>
-                    <li><a href="#">Other</a>
-                    @if (Route::has('login') || Route::has('register'))
-                        <ul class="dropdown">
-                        @auth
-                            <li><a href="#">BMI Calculate</a></li>
-                            <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                {{ __('Log out') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form></li>
-                        @else
-                            <li><a href="{{ route('login') }}">Log In</a></li>
-                            @if (Route::has('register'))
-                                <li><a href="{{ route('register') }}">Sign Up</a></li>
-                            @endif
-                        @endauth
-                        </ul>
-                    @endif
-                    </li>
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Section Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="canvas-close">
+            <i class="fa fa-close"></i>
+        </div>
+        <div class="canvas-search search-switch">
+            <i class="fa fa-search"></i>
+        </div>
+        <nav class="canvas-menu mobile-menu">
+        <ul>
+            <li class="active"><a href="./index.html">Home</a></li>
+            <li><a href="./about-us.html">Exercise</a></li>
+            <li><a href="./class-details.html">Nutrition</a></li>
+            <li><a href="./team.html">Profile</a></li>
+            <li><a href="#">Other</a>
+                <ul class="dropdown">
+                    <li><a href="#">BMI Calculate</a></li>
+                    <li><a href="{{ route('login') }}">Log In</a></li>
+                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        {{ __('Log out') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form></li>
                 </ul>
-            </nav>
-        </div>
+            </li>
+        </ul>
+        </nav>
+    </div>
+    <!-- Offcanvas Menu Section End -->
 
-        <!-- Breadcrumb Area Start -->
-        <section
-            class="breadcrumb-area bg-img bg-overlay jarallax"
-            style="background-image: url(img/bg-img/38.jpg)"
-        >
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <div class="breadcrumb-content text-center">
-                            <h2 class="page-title">Gallery</h2>
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb justify-content-center">
-                                    <li class="breadcrumb-item">
-                                        <a href="index.html"
-                                            ><i class="icon_house_alt"></i>
-                                            Home</a
-                                        >
-                                    </li>
-                                    <li
-                                        class="breadcrumb-item active"
-                                        aria-current="page"
-                                    >
-                                        Gallery
-                                    </li>
-                                </ol>
-                            </nav>
-                        </div>
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="logo">
+                        <a href="./index.html">
+                            <img src="<?php echo url('gymlife'); ?>/img/logo.png" alt="">
+                        </a>
                     </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="nav-menu">
+                        <ul>
+                            <li><a href="{{ url('/') }}">Home</a></li>
+                            <li  class="active"><a href="{{ url('/exercise') }}">Exercise</a></li>
+                            <li><a href="{{ url('/nutrisi') }}">Nutrition</a></li>
+                            <li><a href="./team.html">Profile</a></li>
+                            <li><a href="#">Other</a>
+                            @if (Route::has('login') || Route::has('register'))
+                                <ul class="dropdown">
+                                @auth
+                                    <li><a href="#">BMI Calculate</a></li>
+                                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        {{ __('Log out') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form></li>
+                                @else
+                                    <li><a href="{{ route('login') }}">Log In</a></li>
+                                    @if (Route::has('register'))
+                                        <li><a href="{{ route('register') }}">Sign Up</a></li>
+                                    @endif
+                                @endauth
+                                </ul>
+                            @endif
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-        </section>
-        <!-- Breadcrumb Area End -->
-
-        <!-- Gallery Area Start -->
-        <div class="alime-portfolio-area section-padding-80 clearfix">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- Projects Menu -->
-                        <div
-                            class="alime-projects-menu wow fadeInUp"
-                            data-wow-delay="100ms"
-                        >
-                            <div class="portfolio-menu text-center">
-                                <button class="btn active" data-filter="*">
-                                    All
-                                </button>
-                                <button class="btn" data-filter=".human">
-                                    Human
-                                </button>
-                                <button class="btn" data-filter=".nature">
-                                    Nature
-                                </button>
-                                <button class="btn" data-filter=".country">
-                                    Country
-                                </button>
-                                <button class="btn" data-filter=".video">
-                                    Video
-                                </button>
-                            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="<?php echo url('gymlife'); ?>/img/breadcrumb-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb-text">
+                        <h2>Exercise</h2>
+                        <div class="bt-option">
+                            <a href="{{ url('/') }}">Home</a>
+                            <span href="#">Exercise</span>
                         </div>
-                    </div>
-                </div>
-
-                <div class="row alime-portfolio">
-                    <!-- Single Gallery Item -->
-                    <div
-                        class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp"
-                        data-wow-delay="100ms"
-                    >
-                        <div class="single-portfolio-content">
-                            <img src="img/bg-img/39.jpg" alt="" />
-                            <div class="hover-content">
-                                <a
-                                    href="img/bg-img/39.jpg"
-                                    class="portfolio-img"
-                                    >+</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Gallery Item -->
-                    <div
-                        class="col-12 col-sm-6 col-lg-3 single_gallery_item video human mb-30 wow fadeInUp"
-                        data-wow-delay="300ms"
-                    >
-                        <div class="single-portfolio-content">
-                            <img src="img/bg-img/40.jpg" alt="" />
-                            <div class="hover-content">
-                                <a
-                                    href="img/bg-img/40.jpg"
-                                    class="portfolio-img"
-                                    >+</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Gallery Item -->
-                    <div
-                        class="col-12 col-sm-6 col-lg-3 single_gallery_item country mb-30 wow fadeInUp"
-                        data-wow-delay="500ms"
-                    >
-                        <div class="single-portfolio-content">
-                            <img src="img/bg-img/41.jpg" alt="" />
-                            <div class="hover-content">
-                                <a
-                                    href="img/bg-img/41.jpg"
-                                    class="portfolio-img"
-                                    >+</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Gallery Item -->
-                    <div
-                        class="col-12 col-sm-6 col-lg-3 single_gallery_item human mb-30 wow fadeInUp"
-                        data-wow-delay="700ms"
-                    >
-                        <div class="single-portfolio-content">
-                            <img src="img/bg-img/42.jpg" alt="" />
-                            <div class="hover-content">
-                                <a
-                                    href="img/bg-img/42.jpg"
-                                    class="portfolio-img"
-                                    >+</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Gallery Item -->
-                    <div
-                        class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp"
-                        data-wow-delay="100ms"
-                    >
-                        <div class="single-portfolio-content">
-                            <img src="img/bg-img/43.jpg" alt="" />
-                            <div class="hover-content">
-                                <a
-                                    href="img/bg-img/43.jpg"
-                                    class="portfolio-img"
-                                    >+</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Gallery Item -->
-                    <div
-                        class="col-12 col-sm-6 col-lg-3 single_gallery_item video country mb-30 wow fadeInUp"
-                        data-wow-delay="300ms"
-                    >
-                        <div class="single-portfolio-content">
-                            <img src="img/bg-img/44.jpg" alt="" />
-                            <div class="hover-content">
-                                <a
-                                    href="img/bg-img/44.jpg"
-                                    class="portfolio-img"
-                                    >+</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Gallery Item -->
-                    <div
-                        class="col-12 col-sm-6 col-lg-3 single_gallery_item human mb-30 wow fadeInUp"
-                        data-wow-delay="500ms"
-                    >
-                        <div class="single-portfolio-content">
-                            <img src="img/bg-img/45.jpg" alt="" />
-                            <div class="hover-content">
-                                <a
-                                    href="img/bg-img/45.jpg"
-                                    class="portfolio-img"
-                                    >+</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Gallery Item -->
-                    <div
-                        class="col-12 col-sm-6 col-lg-3 single_gallery_item nature mb-30 wow fadeInUp"
-                        data-wow-delay="700ms"
-                    >
-                        <div class="single-portfolio-content">
-                            <img src="img/bg-img/46.jpg" alt="" />
-                            <div class="hover-content">
-                                <a
-                                    href="img/bg-img/46.jpg"
-                                    class="portfolio-img"
-                                    >+</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Gallery Item -->
-                    <div
-                        class="col-12 col-sm-6 col-lg-3 single_gallery_item video country mb-30 wow fadeInUp"
-                        data-wow-delay="100ms"
-                    >
-                        <div class="single-portfolio-content">
-                            <img src="img/bg-img/47.jpg" alt="" />
-                            <div class="hover-content">
-                                <a
-                                    href="img/bg-img/47.jpg"
-                                    class="portfolio-img"
-                                    >+</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Gallery Item -->
-                    <div
-                        class="col-12 col-sm-6 col-lg-3 single_gallery_item human mb-30 wow fadeInUp"
-                        data-wow-delay="300ms"
-                    >
-                        <div class="single-portfolio-content">
-                            <img src="img/bg-img/48.jpg" alt="" />
-                            <div class="hover-content">
-                                <a
-                                    href="img/bg-img/48.jpg"
-                                    class="portfolio-img"
-                                    >+</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Gallery Item -->
-                    <div
-                        class="col-12 col-sm-6 col-lg-3 single_gallery_item country mb-30 wow fadeInUp"
-                        data-wow-delay="500ms"
-                    >
-                        <div class="single-portfolio-content">
-                            <img src="img/bg-img/49.jpg" alt="" />
-                            <div class="hover-content">
-                                <a
-                                    href="img/bg-img/49.jpg"
-                                    class="portfolio-img"
-                                    >+</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Gallery Item -->
-                    <div
-                        class="col-12 col-sm-6 col-lg-3 single_gallery_item country mb-30 wow fadeInUp"
-                        data-wow-delay="700ms"
-                    >
-                        <div class="single-portfolio-content">
-                            <img src="img/bg-img/50.jpg" alt="" />
-                            <div class="hover-content">
-                                <a
-                                    href="img/bg-img/50.jpg"
-                                    class="portfolio-img"
-                                    >+</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div
-                        class="col-12 text-center wow fadeInUp"
-                        data-wow-delay="800ms"
-                    >
-                        <a href="#" class="btn alime-btn btn-2 mt-15"
-                            >View More</a
-                        >
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Gallery Area End -->
+    </section>
+    <!-- Breadcrumb Section End -->
 
-        <!-- Follow Area Start -->
-        <div class="follow-area clearfix">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-heading text-center">
-                            <h2>Follow Instagram</h2>
-                            <p>@Alime_photographer</p>
-                        </div>
+    <!-- Class Timetable Section Begin -->
+    <section class="class-timetable-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-title">
+                        <span>Find Your Suitable Exercise</span>
+                        <h2> Find Your BMI First</h2>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="table-controls">
+                        <ul>
+                            <li class="active" data-tsfilter="all">All event</li>
+                            <li data-tsfilter="underweight">Underweight</li>
+                            <li data-tsfilter="ideal">Ideal</li>
+                            <li data-tsfilter="Overweight">Overweight</li>
+                            <li data-tsfilter="Obesitas">Obesitas</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-
-            <!-- Instagram Feed Area -->
-            <div class="instragram-feed-area owl-carousel">
-                <!-- Single Instagram Item -->
-                <div class="single-instagram-item">
-                    <img src="img/bg-img/11.jpg" alt="" />
-                    <div
-                        class="instagram-hover-content text-center d-flex align-items-center justify-content-center"
-                    >
-                        <a href="#">
-                            <i class="ti-instagram" aria-hidden="true"></i>
-                            <span>Alime_photographer</span>
-                        </a>
-                    </div>
-                </div>
-                <!-- Single Instagram Item -->
-                <div class="single-instagram-item">
-                    <img src="img/bg-img/12.jpg" alt="" />
-                    <div
-                        class="instagram-hover-content text-center d-flex align-items-center justify-content-center"
-                    >
-                        <a href="#">
-                            <i class="ti-instagram" aria-hidden="true"></i>
-                            <span>Alime_photographer</span>
-                        </a>
-                    </div>
-                </div>
-                <!-- Single Instagram Item -->
-                <div class="single-instagram-item">
-                    <img src="img/bg-img/13.jpg" alt="" />
-                    <div
-                        class="instagram-hover-content text-center d-flex align-items-center justify-content-center"
-                    >
-                        <a href="#">
-                            <i class="ti-instagram" aria-hidden="true"></i>
-                            <span>Alime_photographer</span>
-                        </a>
-                    </div>
-                </div>
-                <!-- Single Instagram Item -->
-                <div class="single-instagram-item">
-                    <img src="img/bg-img/14.jpg" alt="" />
-                    <div
-                        class="instagram-hover-content text-center d-flex align-items-center justify-content-center"
-                    >
-                        <a href="#">
-                            <i class="ti-instagram" aria-hidden="true"></i>
-                            <span>Alime_photographer</span>
-                        </a>
-                    </div>
-                </div>
-                <!-- Single Instagram Item -->
-                <div class="single-instagram-item">
-                    <img src="img/bg-img/15.jpg" alt="" />
-                    <div
-                        class="instagram-hover-content text-center d-flex align-items-center justify-content-center"
-                    >
-                        <a href="#">
-                            <i class="ti-instagram" aria-hidden="true"></i>
-                            <span>Alime_photographer</span>
-                        </a>
-                    </div>
-                </div>
-                <!-- Single Instagram Item -->
-                <div class="single-instagram-item">
-                    <img src="img/bg-img/16.jpg" alt="" />
-                    <div
-                        class="instagram-hover-content text-center d-flex align-items-center justify-content-center"
-                    >
-                        <a href="#">
-                            <i class="ti-instagram" aria-hidden="true"></i>
-                            <span>Alime_photographer</span>
-                        </a>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="class-timetable">
+                        <table>
+                            <tbody>
+                                <!-- PowerLifting -->
+                                <tr>
+                                    <td class="class-time">PowerLifting</td>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
+                                        <h5>WEIGHT LOOSE</h5>
+                                        <span>RLefew D. Loee</span>
+                                    </td>
+                                    <td class="hover-bg ts-meta" data-tsmeta="fitness">
+                                        <h5>Cardio</h5>
+                                        <span>RLefew D. Loee</span>
+                                    </td>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
+                                        <h5>Yoga</h5>
+                                        <span>Keaf Shen</span>
+                                    </td>
+                                    <td class="hover-bg ts-meta" data-tsmeta="fitness">
+                                        <h5>Fitness</h5>
+                                        <span>Kimberly Stone</span>
+                                    </td>
+                                    <td class="dark-bg blank-td"></td>
+                                    <td class="hover-bg ts-meta" data-tsmeta="motivation">
+                                        <h5>Boxing</h5>
+                                        <span>Rachel Adam</span>
+                                    </td>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
+                                        <h5>Body Building</h5>
+                                        <span>Robert Cage</span>
+                                    </td>
+                                </tr>
+                                <!-- medium -->
+                                <tr>
+                                    <td class="class-time">BodyBuilder</td>
+                                    <td class="blank-td"></td>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="fitness">
+                                        <h5>Fitness</h5>
+                                        <span>Kimberly Stone</span>
+                                    </td>
+                                    <td class="hover-bg ts-meta" data-tsmeta="workout">
+                                        <h5>WEIGHT LOOSE</h5>
+                                        <span>RLefew D. Loee</span>
+                                    </td>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="motivation">
+                                        <h5>Cardio</h5>
+                                        <span>RLefew D. Loee</span>
+                                    </td>
+                                    <td class="hover-bg ts-meta" data-tsmeta="workout">
+                                        <h5>Body Building</h5>
+                                        <span>Robert Cage</span>
+                                    </td>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="motivation">
+                                        <h5>Karate</h5>
+                                        <span>Donald Grey</span>
+                                    </td>
+                                    <td class="blank-td"></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Follow Area End -->
+    </section>
+    <!-- Class Timetable Section End -->
 
-        <!-- Footer Area Start -->
-        <footer class="footer-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div
-                            class="footer-content d-flex align-items-center justify-content-between"
-                        >
-                            <!-- Copywrite Text -->
-                            <div class="copywrite-text">
-                                <p>
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                    Copyright &copy;
-                                    <script>
-                                        document.write(
-                                            new Date().getFullYear()
-                                        );
-                                    </script>
-                                    All rights reserved | This template is made
-                                    with
-                                    <i
-                                        class="fa fa-heart-o"
-                                        aria-hidden="true"
-                                    ></i>
-                                    by
-                                    <a
-                                        href="https://colorlib.com"
-                                        target="_blank"
-                                        >Colorlib</a
-                                    >
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                </p>
-                            </div>
-                            <!-- Footer Logo -->
-                            <div class="footer-logo">
-                                <a href="#"
-                                    ><img src="img/core-img/logo2.png" alt=""
-                                /></a>
-                            </div>
-                            <!-- Social Info -->
-                            <div class="social-info">
-                                <a href="#"
-                                    ><i
-                                        class="ti-facebook"
-                                        aria-hidden="true"
-                                    ></i
-                                ></a>
-                                <a href="#"
-                                    ><i
-                                        class="ti-twitter-alt"
-                                        aria-hidden="true"
-                                    ></i
-                                ></a>
-                                <a href="#"
-                                    ><i
-                                        class="ti-linkedin"
-                                        aria-hidden="true"
-                                    ></i
-                                ></a>
-                                <a href="#"
-                                    ><i
-                                        class="ti-pinterest"
-                                        aria-hidden="true"
-                                    ></i
-                                ></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Footer Area End -->
+    <!-- Search model Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
 
-        <!-- **** All JS Files ***** -->
-        <script src="<?php echo url('alimie'); ?>/js/jquery.min.js"></script>
+    <!-- **** All JS Files ***** -->
+    <script src="<?php echo url('alimie'); ?>/js/jquery.min.js"></script>
     <script src="<?php echo url('alimie'); ?>/js/popper.min.js"></script>
     <script src="<?php echo url('alimie'); ?>/js/alime.bundle.js"></script>
     <script src="<?php echo url('alimie'); ?>/js/default-assets/active.js"></script>
-    </body>
+    <script src="<?php echo url('gymlife'); ?>/js/jquery-3.3.1.min.js"></script>
+    <script src="<?php echo url('gymlife'); ?>/js/bootstrap.min.js"></script>
+    <script src="<?php echo url('gymlife'); ?>/js/jquery.magnific-popup.min.js"></script>
+    <script src="<?php echo url('gymlife'); ?>/js/masonry.pkgd.min.js"></script>
+    <script src="<?php echo url('gymlife'); ?>/js/jquery.barfiller.js"></script>
+    <script src="<?php echo url('gymlife'); ?>/js/jquery.slicknav.js"></script>
+    <script src="<?php echo url('gymlife'); ?>/js/owl.carousel.min.js"></script>
+    <script src="<?php echo url('gymlife'); ?>/js/main.js"></script>
+
+
+
+</body>
+
 </html>
