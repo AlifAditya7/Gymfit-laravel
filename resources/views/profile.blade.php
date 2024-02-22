@@ -137,6 +137,8 @@
 </head>
 
 <body>
+
+
     <!-- Offcanvas Menu Section Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
@@ -260,6 +262,7 @@
                     id="fileInput"
                     accept="image/*"
                     style="display: none"
+                    onchange="previewImage(this)"
                 />
                 <button id="gantiGambar" class="btn btn-secondary">
                     Ganti Gambar
@@ -270,34 +273,26 @@
 
     <!-- Script untuk ganti gambar profil -->
     <script>
-        $(document).ready(function () {
-            // Fungsi untuk mengganti gambar saat tombol diklik
-            $("#gantiGambar").click(function () {
-                // Klik input file saat tombol diklik
-                $("#fileInput").click();
-            });
+        function previewImage(input) {
+            var file = input.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    // Mengganti gambar dengan gambar yang baru diambil
+                    document.getElementById('gambarUtama').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
 
-            // Fungsi untuk menangani perubahan file pada input file
-            $("#fileInput").change(function () {
-                var file = this.files[0];
-                if (file) {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        // Mengganti gambar dengan gambar yang baru diambil
-                        $("#gambarUtama").attr("src", e.target.result);
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
-
-            // Fungsi untuk menghapus akun
-            $("#hapusAkun").click(function () {
-                if (confirm("Apakah Anda yakin ingin menghapus akun?")) {
-                    localStorage.clear();
-                    location.reload(); // Me-refresh halaman
-                }
-            });
+        // Fungsi untuk menghapus akun
+        document.getElementById('hapusAkun').addEventListener('click', function () {
+            if (confirm("Apakah Anda yakin ingin menghapus akun?")) {
+                localStorage.clear();
+                location.reload(); // Me-refresh halaman
+            }
         });
+
     </script>
 
     <!-- FORM -->
