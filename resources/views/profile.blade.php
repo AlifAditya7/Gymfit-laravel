@@ -281,13 +281,14 @@
     <div class="container mt-3">
         <div class="card">
             <div class="card-body">
-                <form>
+                <form id="profileForm">
                     <div class="form-group mt-3">
                         <label for="nama">Nama</label>
                         <input
                             type="text"
                             class="form-control"
                             id="nama"
+                            name="nama"
                             placeholder="Masukkan nama Anda"
                         />
                     </div>
@@ -299,6 +300,7 @@
                             max="200"
                             class="form-control"
                             id="beratBadan"
+                            name="beratBadan"
                             placeholder="Masukkan berat badan Anda"
                         />
                     </div>
@@ -310,18 +312,18 @@
                             max="200"
                             class="form-control"
                             id="tinggiBadan"
+                            name="tinggiBadan"
                             placeholder="Masukkan tinggi badan Anda"
                         />
                     </div>
 
                     <div class="form-group mt-3">
-                        <label for="tingkatKesulitan"
-                            >Tingkat Kesulitan</label
-                        >
+                        <label for="tingkatKesulitan">Tingkat Kesulitan</label>
                         <select
                             name="tingkatKesulitan"
                             id="tingkatKesulitan"
                             class="form-control"
+                            name="tingkatKesulitan"
                         >
                             <option value="beginner">Pemula</option>
                             <!-- Tambahkan opsi lain sesuai kebutuhan -->
@@ -342,6 +344,26 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#profileForm").submit(function (event) {
+                event.preventDefault(); // Prevent form submission
+                var formData = $(this).serialize(); // Serialize form data
+                $.ajax({
+                    url: "{{ route('update-profile') }}",
+                    type: "POST",
+                    data: formData,
+                    success: function (response) {
+                        $("#selamatDatang").text("Selamat datang, " + response.nama);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 
