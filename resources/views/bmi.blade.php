@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/style.css" type="text/css">
-    
 </head>
 
 <body>
@@ -175,13 +174,14 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
                             viverra maecenas accumsan lacus vel facilisis.</p>
-                        <form action="#">
+                        <form action="{{ route('bmi') }}" method="POST">
+							@csrf
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <input type="text" placeholder="Height / cm">
+                                    <input type="number" id="height" placeholder="Height / cm">
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" placeholder="Weight / kg">
+                                    <input type="number" id="weight" placeholder="Weight / kg">
                                 </div>
                                 <div class="col-sm-6">
                                     <input type="text" placeholder="Age">
@@ -189,8 +189,11 @@
                                 <div class="col-sm-6">
                                     <input type="text" placeholder="Sex">
                                 </div>
-                                <div class="col-lg-12">
+                                <div class="col-sm-12">
                                     <button type="submit">Calculate</button>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input disabled type="text" id="bmi-result">
                                 </div>
                             </div>
                         </form>
@@ -202,6 +205,32 @@
     <!-- BMI Calculator Section End -->
 
     <!-- **** All JS Files ***** -->
+    <script>
+        const btnEl = document.getElementById("btn");
+        const bmiInputEl = document.getElementById("bmi-result");
+        const weightConditionEl = document.getElementById("weight-condition");
+
+        function calculateBMI() {
+            const heightValue = document.getElementById("height").value / 100;
+            const weightValue = document.getElementById("weight").value;
+
+            const bmiValue = weightValue / (heightValue * heightValue);
+
+            bmiInputEl.value = bmiValue;
+
+            if (bmiValue < 18.5) {
+                weightConditionEl.innerText = "Under weight";
+            } else if (bmiValue >= 18.5 && bmiValue <= 24.9) {
+                weightConditionEl.innerText = "Normal weight";
+            } else if (bmiValue >= 25 && bmiValue <= 29.9) {
+                weightConditionEl.innerText = "Overweight";
+            } else if (bmiValue >= 30) {
+                weightConditionEl.innerText = "Obese";
+            }
+        }
+
+        btnEl.addEventListener("click", calculateBMI);
+    </script>
     <script src="<?php echo url('alimie'); ?>/js/jquery.min.js"></script>
     <script src="<?php echo url('alimie'); ?>/js/popper.min.js"></script>
     <script src="<?php echo url('alimie'); ?>/js/alime.bundle.js"></script>
