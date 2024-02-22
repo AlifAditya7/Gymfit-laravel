@@ -126,7 +126,6 @@
 
 <body class="bg-image">
 
-
     <!-- Offcanvas Menu Section Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
@@ -149,7 +148,6 @@
                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Log out') }}
                             </a>
-
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form></li>
@@ -281,7 +279,8 @@
     <div class="container mt-3">
         <div class="card">
             <div class="card-body">
-                <form id="profileForm">
+                <form id="profileForm" action="{{ route('update-profile') }}" method="POST">
+                    @csrf
                     <div class="form-group mt-3">
                         <label for="nama">Nama</label>
                         <input
@@ -344,26 +343,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        $(document).ready(function () {
-            $("#profileForm").submit(function (event) {
-                event.preventDefault(); // Prevent form submission
-                var formData = $(this).serialize(); // Serialize form data
-                $.ajax({
-                    url: "{{ route('update-profile') }}",
-                    type: "POST",
-                    data: formData,
-                    success: function (response) {
-                        $("#selamatDatang").text("Selamat datang, " + response.nama);
-                    },
-                    error: function (xhr, status, error) {
-                        console.error(xhr.responseText);
-                    }
-                });
-            });
-        });
-    </script>
 
 </body>
 
