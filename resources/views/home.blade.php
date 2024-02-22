@@ -47,7 +47,7 @@
             <li><a href="./team.html">Profile</a></li>
             <li><a href="#">Other</a>
                 <ul class="dropdown">
-                    <li><a href="#">BMI Calculate</a></li>
+                    <li><a href="{{ route('bmi') }}">BMI Calculate</a></li>
                     <li><a href="{{ route('login') }}">Log In</a></li>
                     <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         {{ __('Log out') }}
@@ -85,7 +85,7 @@
                             @if (Route::has('login') || Route::has('register'))
                                 <ul class="dropdown">
                                 @auth
-                                    <li><a href="#">BMI Calculate</a></li>
+                                    <li><a href="{{ route('bmi') }}">BMI Calculate</a></li>
                                     <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('Log out') }}
                                     </a>
