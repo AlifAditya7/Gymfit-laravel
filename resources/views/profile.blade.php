@@ -23,38 +23,12 @@
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/style.css" type="text/css">
     <style>
-            body {
-                background-size: cover;
-                background-repeat: no-repeat;
-                font-family: Arial, sans-serif;
-                color: #333;
-                background-color: #fff; /* Warna putih */
-                margin: 0;
-                padding: 0;
-            }
-
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .card {
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-secondary {
-            background-color: #6c757d;
-            border-color: #6c757d;
-        }
-
-        .btn-secondary:hover {
-            background-color: #545b62;
-            border-color: #545b62;
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
         }
 
         /* Styling tambahan sesuai kebutuhan */
@@ -105,11 +79,6 @@
             margin-top: 10px;
         }
 
-        .dark-theme {
-            background-color: #333;
-            color: #f8f9fa;
-        }
-
         /* Menyesuaikan ukuran gambar tanpa mengubah proporsi */
         .img-thumbnail {
             max-width: 100%;
@@ -130,11 +99,20 @@
             margin-top: 10px;
         }
 
+        /* Background image */
+        .bg-image {
+            background-image: url('https://www.upload.ee/image/16308328/wp9738740-gymer-wallpapers.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
     </style>
 
 </head>
 
-<body>
+<body class="bg-image">
+
 
     <!-- Offcanvas Menu Section Begin -->
     <div class="offcanvas-menu-overlay"></div>
