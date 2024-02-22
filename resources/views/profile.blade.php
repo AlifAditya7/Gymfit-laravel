@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/style.css" type="text/css">
     <style>
             body {
-                background-image:   ;
                 background-size: cover;
                 background-repeat: no-repeat;
                 font-family: Arial, sans-serif;
