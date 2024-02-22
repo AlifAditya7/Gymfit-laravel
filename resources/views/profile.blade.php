@@ -281,7 +281,7 @@
     <div class="container mt-3">
         <div class="card">
             <div class="card-body">
-                <form method="POST" action="{{ route('updateprofile') }}">
+                <form method="POST" action="{{ route('profile') }}">
                     @csrf
                     <div class="form-group mt-3">
                         <label for="nama">Nama</label>
