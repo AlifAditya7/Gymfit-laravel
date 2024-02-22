@@ -70,7 +70,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="logo">
-                        <a href="./index.html">
+                        <a href="{{ url('/') }}">
                             <img src="<?php echo url('gymlife'); ?>/img/logo.png" alt="">
                         </a>
                     </div>

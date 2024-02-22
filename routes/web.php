@@ -36,3 +36,7 @@ Route::get('/bmi', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+
+Route::get('/detailex', function () {
+    return view('detailex');
+});
