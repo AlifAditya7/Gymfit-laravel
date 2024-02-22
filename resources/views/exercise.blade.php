@@ -143,8 +143,7 @@
                             <li class="active" data-tsfilter="all">All event</li>
                             <li data-tsfilter="underweight">Underweight</li>
                             <li data-tsfilter="ideal">Ideal</li>
-                            <li data-tsfilter="Overweight">Overweight</li>
-                            <li data-tsfilter="Obesitas">Obesity</li>
+                            <li data-tsfilter="overweight">Overweight</li>
                         </ul>
                     </div>
                 </div>
