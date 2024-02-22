@@ -69,7 +69,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="logo">
-                        <a href="./index.html">
+                        <a href="{{ url('/') }}">
                             <img src="<?php echo url('gymlife'); ?>/img/logo.png" alt="">
                         </a>
                     </div>
@@ -80,7 +80,7 @@
                             <li><a href="{{ url('/') }}">Home</a></li>
                             <li><a href="{{ url('/exercise') }}">Exercise</a></li>
                             <li><a href="{{ url('/nutrisi') }}">Nutrition</a></li>
-                            <li><a href="./team.html">Profile</a></li>
+                            <li><a href="{{ url('/profile') }}">Profile</a></li>
                             <li><a href="#">Other</a>
                             @if (Route::has('login') || Route::has('register'))
                                 <ul class="dropdown">
