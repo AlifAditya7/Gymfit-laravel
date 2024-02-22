@@ -22,6 +22,14 @@
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/style.css" type="text/css">
+    <style>
+    select {
+    width: 200px; /* Sesuaikan lebar sesuai kebutuhan */
+    height: 40px; /* Sesuaikan tinggi sesuai kebutuhan */
+    background-color: #F36100; /* Ganti dengan kode warna latar belakang yang diinginkan */
+    color: white; /* Ganti dengan kode warna teks yang diinginkan */
+}
+</style>
 
 </head>
 
@@ -138,17 +146,25 @@
                     <div class="chart-calculate-form">
                         <p></p>
                         <form action="#">
+                        <div class="container">
                             <div class="row">
-                                <div class="col-sm-12">
-                                    <input type="text" placeholder="Max Calories">
-                                </div>
-                                <div class="col-sm-12">
-                                    <input type="text" placeholder="Min Calories">
-                                </div>
-                                <div class="col-lg-12">
-                                    <button type="submit">Calculate</button>
+                                <div class="col-sm-12 text-center">
+                                <select class="form-select form-select-lg mb3">
+                                    <option selected>Select Nutrition</option>
+                                    <option value="1">Carbohydrates</option>
+                                    <option value="2">Protein</option>
+                                    <option value="3">Fats</option>
+                                </select>
                                 </div>
                             </div>
+
+                            <div class="row mt-3">
+                                <div class="col-lg-12 text-center">
+                                    <button type="submit" class="btn btn-primary" style="width: 100px;">Search</button>
+                                </div>
+                            </div>
+                            </div>
+
                         </form>
                     </div>
         </div>

@@ -81,7 +81,7 @@
                             <li><a href="{{ url('/') }}">Home</a></li>
                             <li  class="active"><a href="{{ url('/exercise') }}">Exercise</a></li>
                             <li><a href="{{ url('/nutrisi') }}">Nutrition</a></li>
-                            <li><a href="./team.html">Profile</a></li>
+                            <li><a href="{{ url('/profile') }}">Profile</a></li>
                             <li><a href="#">Other</a>
                             @if (Route::has('login') || Route::has('register'))
                                 <ul class="dropdown">
@@ -144,7 +144,7 @@
                             <li data-tsfilter="underweight">Underweight</li>
                             <li data-tsfilter="ideal">Ideal</li>
                             <li data-tsfilter="Overweight">Overweight</li>
-                            <li data-tsfilter="Obesitas">Obesitas</li>
+                            <li data-tsfilter="Obesitas">Obesity</li>
                         </ul>
                     </div>
                 </div>
