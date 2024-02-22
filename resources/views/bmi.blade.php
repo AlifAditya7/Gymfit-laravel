@@ -47,7 +47,7 @@
             <li><a href="./team.html">Profile</a></li>
             <li><a href="#">Other</a>
                 <ul class="dropdown">
-                    <li><a href="#">BMI Calculate</a></li>
+                    <li><a href="{{ url('/bmi') }}">BMI Calculate</a></li>
                     <li><a href="{{ route('login') }}">Log In</a></li>
                     <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         {{ __('Log out') }}
@@ -174,7 +174,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
                             viverra maecenas accumsan lacus vel facilisis.</p>
-                        <form action="{{ route('bmi') }}" method="POST">
+                        <form action="{{ url('bmi') }}" method="POST">
 							@csrf
                             <div class="row">
                                 <div class="col-sm-6">

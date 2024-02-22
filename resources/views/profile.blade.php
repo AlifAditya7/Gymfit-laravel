@@ -23,38 +23,12 @@
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/style.css" type="text/css">
     <style>
-            body {
-                background-size: cover;
-                background-repeat: no-repeat;
-                font-family: Arial, sans-serif;
-                color: #333;
-                background-color: #fff; /* Warna putih */
-                margin: 0;
-                padding: 0;
-            }
-
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .card {
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-secondary {
-            background-color: #6c757d;
-            border-color: #6c757d;
-        }
-
-        .btn-secondary:hover {
-            background-color: #545b62;
-            border-color: #545b62;
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
         }
 
         /* Styling tambahan sesuai kebutuhan */
@@ -105,17 +79,25 @@
             margin-top: 10px;
         }
 
-        .dark-theme {
-            background-color: #333;
-            color: #f8f9fa;
-        }
-
         /* Menyesuaikan ukuran gambar tanpa mengubah proporsi */
         .img-thumbnail {
             max-width: 100%;
             max-height: 300px;
             width: auto;
             height: auto;
+        }
+
+        /* Tambahkan CSS untuk posisi tulisan "Selamat datang" */
+        #selamatDatang {
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+            color: white; /* Ubah warna teks menjadi putih */
+        }
+
+        /* Tambahkan CSS untuk posisi tombol "Ganti Gambar" */
+        #gantiGambar {
+            margin-top: 20px; /* Ubah margin top agar terlihat jarak dengan teks "Selamat datang" */
         }
 
         /* Tambahkan CSS untuk posisi tombol "Hapus Akun" */
@@ -130,11 +112,19 @@
             margin-top: 10px;
         }
 
+        /* Background image */
+        .bg-image {
+            background-image: url('https://www.upload.ee/image/16308328/wp9738740-gymer-wallpapers.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
     </style>
 
 </head>
 
-<body>
+<body class="bg-image">
 
 
     <!-- Offcanvas Menu Section Begin -->
@@ -187,7 +177,7 @@
                             <li><a href="{{ url('/') }}">Home</a></li>
                             <li><a href="{{ url('/exercise') }}">Exercise</a></li>
                             <li><a href="{{ url('/nutrisi') }}">Nutrition</a></li>
-                            <li class="active"><a href="./team.html">Profile</a></li>
+                            <li class="active"><a href="{{ url('/profile') }}">Profile</a></li>
                             <li><a href="#">Other</a>
                                 @if (Route::has('login') || Route::has('register'))
                                     <ul class="dropdown">
@@ -234,15 +224,6 @@
     </section>
     <!-- Breadcrumb Section End -->
 
-    <div class="header">
-        <div class="navbar">
-            <div class="logo">
-                <h1>Profile</h1>
-                <p id="selamatDatang">Selamat datang, [nama]</p>
-            </div>
-        </div>
-    </div>
-
     <div class="container rounded">
         <div class="shadow-box rounded row-gap-3">
             <div class="text-center mt-5">
@@ -254,6 +235,9 @@
                 />
             </div>
             <div class="text-center mt-3">
+                @auth
+                    <p id="selamatDatang">Selamat datang, {{ Auth::user()->name }}</p>
+                @endauth
                 <!-- Tambahkan input type file untuk mengganti gambar -->
                 <input
                     type="file"
@@ -269,6 +253,7 @@
     </div>
 
     <!-- Script untuk ganti gambar profil -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
             // Fungsi untuk mengganti gambar saat tombol diklik
@@ -287,14 +272,6 @@
                         $("#gambarUtama").attr("src", e.target.result);
                     };
                     reader.readAsDataURL(file);
-                }
-            });
-
-            // Fungsi untuk menghapus akun
-            $("#hapusAkun").click(function () {
-                if (confirm("Apakah Anda yakin ingin menghapus akun?")) {
-                    localStorage.clear();
-                    location.reload(); // Me-refresh halaman
                 }
             });
         });

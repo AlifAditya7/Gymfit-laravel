@@ -56,7 +56,7 @@
             <li><a href="./team.html">Profile</a></li>
             <li><a href="#">Other</a>
                 <ul class="dropdown">
-                    <li><a href="#">BMI Calculate</a></li>
+                    <li><a href="{{ url('/bmi') }}">BMI Calculate</a></li>
                     <li><a href="{{ route('login') }}">Log In</a></li>
                     <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         {{ __('Log out') }}
@@ -89,7 +89,7 @@
                             <li><a href="{{ url('/') }}">Home</a></li>
                             <li><a href="{{ url('/exercise') }}">Exercise</a></li>
                             <li class="active"><a href="{{ url('/nutrisi') }}">Nutrition</a></li>
-                            <li><a href="./team.html">Profile</a></li>
+                            <li><a href="{{ url('/profile') }}">Profile</a></li>
                             <li><a href="#">Other</a>
                             @if (Route::has('login') || Route::has('register'))
                                 <ul class="dropdown">
