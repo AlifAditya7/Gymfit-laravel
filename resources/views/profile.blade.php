@@ -214,8 +214,7 @@
     <div class="header">
         <div class="navbar">
             <div class="logo">
-                <h1>Profile</h1>
-                <p id="selamatDatang">Selamat datang, [nama]</p>
+                <p id="selamatDatang">Selamat datang</p>
             </div>
         </div>
     </div>
