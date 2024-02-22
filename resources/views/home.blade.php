@@ -118,8 +118,7 @@
                         <div class="col-lg-6 offset-lg-6">
                             <div class="hi-text">
                                 <span>Shape your body</span>
-                                <h1>Be <strong>strong</strong> traning hard</h1>
-                                <a href="#" class="primary-btn">Get info</a>
+                                <h1>No <strong>Pain</strong> No <strong>Gain</strong></h1>
                             </div>
                         </div>
                     </div>
@@ -131,8 +130,7 @@
                         <div class="col-lg-6 offset-lg-6">
                             <div class="hi-text">
                                 <span>Shape your body</span>
-                                <h1>Be <strong>strong</strong> traning hard</h1>
-                                <a href="#" class="primary-btn">Get info</a>
+                                <h1>No <strong>Pain</strong> No <strong>Gain</strong></h1>
                             </div>
                         </div>
                     </div>
@@ -154,22 +152,16 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-6 col-sm-6">
                     <div class="cs-item">
                         <span class="flaticon-033-juice"></span>
                         <h4>Healthy nutrition plan</h4>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-6 col-sm-6">
                     <div class="cs-item">
                         <span class="flaticon-002-dumbell"></span>
                         <h4>Proffesponal training plan</h4>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="cs-item">
-                        <span class="flaticon-014-heart-beat"></span>
-                        <h4>Unique to your needs</h4>
                     </div>
                 </div>
             </div>
