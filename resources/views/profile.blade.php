@@ -281,53 +281,19 @@
     <div class="container mt-3">
         <div class="card">
             <div class="card-body">
-                <form>
+                <form id="updateProfileForm" action="{{ route('update-profile') }}" method="POST">
+                    @csrf
                     <div class="form-group mt-3">
                         <label for="nama">Nama</label>
                         <input
                             type="text"
                             class="form-control"
                             id="nama"
+                            name="nama"
                             placeholder="Masukkan nama Anda"
+                            value="{{ Auth::user()->name }}"
                         />
                     </div>
-                    <div class="form-group mt-3">
-                        <label for="beratBadan">Berat Badan (kg)</label>
-                        <input
-                            type="number"
-                            min="1"
-                            max="200"
-                            class="form-control"
-                            id="beratBadan"
-                            placeholder="Masukkan berat badan Anda"
-                        />
-                    </div>
-                    <div class="form-group mt-3">
-                        <label for="tinggiBadan">Tinggi Badan (cm)</label>
-                        <input
-                            type="number"
-                            min="1"
-                            max="200"
-                            class="form-control"
-                            id="tinggiBadan"
-                            placeholder="Masukkan tinggi badan Anda"
-                        />
-                    </div>
-
-                    <div class="form-group mt-3">
-                        <label for="tingkatKesulitan"
-                            >Tingkat Kesulitan</label
-                        >
-                        <select
-                            name="tingkatKesulitan"
-                            id="tingkatKesulitan"
-                            class="form-control"
-                        >
-                            <option value="beginner">Pemula</option>
-                            <!-- Tambahkan opsi lain sesuai kebutuhan -->
-                        </select>
-                    </div>
-
                     <div class="form-group buttons">
                         <input
                             class="btn btn-primary mt-3"
@@ -342,6 +308,30 @@
             </div>
         </div>
     </div>
+
+    <!-- Script untuk ganti gambar profil -->
+    <script>
+        $(document).ready(function () {
+            // Fungsi untuk mengganti gambar saat tombol diklik
+            $("#gantiGambar").click(function () {
+                // Klik input file saat tombol diklik
+                $("#fileInput").click();
+            });
+
+            // Fungsi untuk menangani perubahan file pada input file
+            $("#fileInput").change(function () {
+                var file = this.files[0];
+                if (file) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        // Mengganti gambar dengan gambar yang baru diambil
+                        $("#gambarUtama").attr("src", e.target.result);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
 
 </body>
 
