@@ -23,16 +23,15 @@
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/style.css" type="text/css">
     <style>
-        body {
-            background-image: ;
-            background-size: cover;
-            background-repeat: no-repeat;
-            font-family: Arial, sans-serif;
-            color: #333;
-            background-color: #fff;
-            margin: 0;
-            padding: 0;
-        }
+            body {
+                background-size: cover;
+                background-repeat: no-repeat;
+                font-family: Arial, sans-serif;
+                color: #333;
+                background-color: #fff; /* Warna putih */
+                margin: 0;
+                padding: 0;
+            }
 
         .container {
             max-width: 800px;
