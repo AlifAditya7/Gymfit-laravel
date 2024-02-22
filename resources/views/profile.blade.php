@@ -137,7 +137,6 @@
 
 <body>
 
-
     <!-- Offcanvas Menu Section Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
@@ -270,6 +269,7 @@
     </div>
 
     <!-- Script untuk ganti gambar profil -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
             // Fungsi untuk mengganti gambar saat tombol diklik
@@ -288,14 +288,6 @@
                         $("#gambarUtama").attr("src", e.target.result);
                     };
                     reader.readAsDataURL(file);
-                }
-            });
-
-            // Fungsi untuk menghapus akun
-            $("#hapusAkun").click(function () {
-                if (confirm("Apakah Anda yakin ingin menghapus akun?")) {
-                    localStorage.clear();
-                    location.reload(); // Me-refresh halaman
                 }
             });
         });
