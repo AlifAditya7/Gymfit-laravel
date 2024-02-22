@@ -32,3 +32,7 @@ Route::get('/nutrisi', function () {
 Route::get('/bmi', function () {
     return view('bmi');
 });
+
+Route::get('/profile', function () {
+    return view('profile');
+});
