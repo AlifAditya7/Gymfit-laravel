@@ -126,6 +126,7 @@
 
 <body class="bg-image">
 
+
     <!-- Offcanvas Menu Section Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
@@ -148,6 +149,7 @@
                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Log out') }}
                             </a>
+
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form></li>
@@ -279,7 +281,7 @@
     <div class="container mt-3">
         <div class="card">
             <div class="card-body">
-                <form id="profileForm" action="{{ route('update-profile') }}" method="POST">
+                <form action="{{ route('update-profile') }}" method="POST">
                     @csrf
                     <div class="form-group mt-3">
                         <label for="nama">Nama</label>
@@ -299,7 +301,7 @@
                             max="200"
                             class="form-control"
                             id="beratBadan"
-                            name="beratBadan"
+                            name="berat_badan"
                             placeholder="Masukkan berat badan Anda"
                         />
                     </div>
@@ -311,7 +313,7 @@
                             max="200"
                             class="form-control"
                             id="tinggiBadan"
-                            name="tinggiBadan"
+                            name="tinggi_badan"
                             placeholder="Masukkan tinggi badan Anda"
                         />
                     </div>
@@ -319,10 +321,9 @@
                     <div class="form-group mt-3">
                         <label for="tingkatKesulitan">Tingkat Kesulitan</label>
                         <select
-                            name="tingkatKesulitan"
+                            name="tingkat_kesulitan"
                             id="tingkatKesulitan"
                             class="form-control"
-                            name="tingkatKesulitan"
                         >
                             <option value="beginner">Pemula</option>
                             <!-- Tambahkan opsi lain sesuai kebutuhan -->
