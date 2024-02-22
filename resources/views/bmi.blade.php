@@ -174,7 +174,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
                             viverra maecenas accumsan lacus vel facilisis.</p>
-                        <form action="{{ route('bmi') }}" method="POST">
+                        <form action="{{ url('bmi') }}" method="POST">
 							@csrf
                             <div class="row">
                                 <div class="col-sm-6">
