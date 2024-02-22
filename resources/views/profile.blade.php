@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/style.css" type="text/css">
     <style>
             body {
+                background-image:   ;
                 background-size: cover;
                 background-repeat: no-repeat;
                 font-family: Arial, sans-serif;
@@ -129,18 +130,16 @@
             #hapusAkun {
                 margin-top: 10px;
             }
+
         </style>
 
 </head>
 
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
+    
 
-    <!-- Offcanvas Menu Section Begin -->
-    <div class="offcanvas-menu-overlay"></div>
+       <!-- Offcanvas Menu Section Begin -->
+       <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <div class="canvas-close">
             <i class="fa fa-close"></i>
@@ -188,8 +187,8 @@
                         <ul>
                             <li><a href="{{ url('/') }}">Home</a></li>
                             <li><a href="{{ url('/exercise') }}">Exercise</a></li>
-                            <li><a href="{{ url('/nutrisi') }}">Nutrition</a></li>
-                            <li><a href="{{ url('/profile') }}">Profile</a></li>
+                            <li class="active"><a href="{{ url('/nutrisi') }}">Nutrition</a></li>
+                            <li><a href="./team.html">Profile</a></li>
                             <li><a href="#">Other</a>
                             @if (Route::has('login') || Route::has('register'))
                                 <ul class="dropdown">
@@ -217,6 +216,24 @@
         </div>
     </header>
     <!-- Header End -->
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="<?php echo url('gymlife'); ?>/img/breadcrumb-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center" >
+                    <div class="breadcrumb-text">
+                        <h2>Profile</h2>
+                        <div class="bt-option">
+                            <a href="{{ url('/') }}">Home</a>
+                            <span href="{{ url('/profile') }}">Profile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
 
     <div class="header">
             <div class="navbar">
