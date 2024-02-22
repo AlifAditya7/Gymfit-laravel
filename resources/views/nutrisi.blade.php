@@ -145,28 +145,47 @@
                     </div>
                     <div class="chart-calculate-form">
                         <p></p>
-                        <form action="#">
+                        <form action="{{ route('nutrisi') }}" method="POST">
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-12 text-center">
-                                <select class="form-select form-select-lg mb3">
+                                <select class="form-select form-select-lg mb3" name="nutrisi">
                                     <option selected>Select Nutrition</option>
-                                    <option value="1">Carbohydrates</option>
-                                    <option value="2">Protein</option>
-                                    <option value="3">Fats</option>
+                                    <option value="karbohidrat">Carbohydrates</option>
+                                    <option value="protein">Protein</option>
+                                    <option value="lemak">Fats</option>
                                 </select>
                                 </div>
                             </div>
 
                             <div class="row mt-3">
                                 <div class="col-lg-12 text-center">
-                                    <button type="submit" class="btn btn-primary" style="width: 100px;">Search</button>
+                                    <button type="submit" class="btn btn-primary" name="search" style="width: 100px;">Search</button>
                                 </div>
                             </div>
                             </div>
-
                         </form>
+                        <br>
                     </div>
+                    <table style="color:white;" border="1">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Nama</th>
+                                    <th>Kategori</th>
+                                    <th>Deskripsi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($Nutrisi as $d)
+                                <tr>
+                                    <td>{{ $d->id }}</td>
+                                    <td>{{ $d->nama }}</td>
+                                    <td>{{ $d->kategori }}</td>
+                                    <td>{{ $d->deskripsi }}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                    </table>
         </div>
     </section>
     <!-- BMI Calculator Section End -->

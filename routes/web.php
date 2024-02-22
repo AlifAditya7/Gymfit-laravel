@@ -25,9 +25,16 @@ Route::get('/exercise', function () {
     return view('exercise');
 });
 
+Route::get('/exercise', [App\Http\Controllers\ExerciseController::class, 'index'])->name('exercise');
+
 Route::get('/nutrisi', function () {
     return view('nutrisi');
 });
+
+Route::get('/nutrisi', 'App\Http\Controllers\NutrisiController')->name('nutrisi');
+
+Route::post('/nutrisi', 'NutrisiController@invoke')->name('nutrisi');
+
 
 Route::get('/bmi', function () {
     return view('bmi');

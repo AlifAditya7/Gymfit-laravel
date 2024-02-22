@@ -143,76 +143,31 @@
                             <li class="active" data-tsfilter="all">All event</li>
                             <li data-tsfilter="underweight">Underweight</li>
                             <li data-tsfilter="ideal">Ideal</li>
-                            <li data-tsfilter="Overweight">Overweight</li>
-                            <li data-tsfilter="Obesitas">Obesity</li>
+                            <li data-tsfilter="overweight">Overweight</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
+                @foreach ($exercise as $d)
+                <div class="col-md-2">
                     <div class="class-timetable">
                         <table>
                             <tbody>
-                                <!-- PowerLifting -->
                                 <tr>
-                                    <td class="class-time">PowerLifting</td>
-                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
-                                        <h5>WEIGHT LOOSE</h5>
-                                        <span>RLefew D. Loee</span>
+                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="{{ $d->bmires }}">
+                                        <a href="{{ url('/detailex', ['id' => $d->id]) }}">
+                                            <h5>{{ $d->nama }}</h5>
+                                            <span>{{ $d->kategori }}</span>
+                                        </a>
                                     </td>
-                                    <td class="hover-bg ts-meta" data-tsmeta="fitness">
-                                        <h5>Cardio</h5>
-                                        <span>RLefew D. Loee</span>
-                                    </td>
-                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
-                                        <h5>Yoga</h5>
-                                        <span>Keaf Shen</span>
-                                    </td>
-                                    <td class="hover-bg ts-meta" data-tsmeta="fitness">
-                                        <h5>Fitness</h5>
-                                        <span>Kimberly Stone</span>
-                                    </td>
-                                    <td class="dark-bg blank-td"></td>
-                                    <td class="hover-bg ts-meta" data-tsmeta="motivation">
-                                        <h5>Boxing</h5>
-                                        <span>Rachel Adam</span>
-                                    </td>
-                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="workout">
-                                        <h5>Body Building</h5>
-                                        <span>Robert Cage</span>
-                                    </td>
-                                </tr>
-                                <!-- medium -->
-                                <tr>
-                                    <td class="class-time">BodyBuilder</td>
-                                    <td class="blank-td"></td>
-                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="fitness">
-                                        <h5>Fitness</h5>
-                                        <span>Kimberly Stone</span>
-                                    </td>
-                                    <td class="hover-bg ts-meta" data-tsmeta="workout">
-                                        <h5>WEIGHT LOOSE</h5>
-                                        <span>RLefew D. Loee</span>
-                                    </td>
-                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="motivation">
-                                        <h5>Cardio</h5>
-                                        <span>RLefew D. Loee</span>
-                                    </td>
-                                    <td class="hover-bg ts-meta" data-tsmeta="workout">
-                                        <h5>Body Building</h5>
-                                        <span>Robert Cage</span>
-                                    </td>
-                                    <td class="dark-bg hover-bg ts-meta" data-tsmeta="motivation">
-                                        <h5>Karate</h5>
-                                        <span>Donald Grey</span>
-                                    </td>
-                                    <td class="blank-td"></td>
                                 </tr>
                             </tbody>
                         </table>
+                        <br>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </section>
