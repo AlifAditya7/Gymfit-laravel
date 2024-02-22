@@ -87,6 +87,19 @@
             height: auto;
         }
 
+        /* Tambahkan CSS untuk posisi tulisan "Selamat datang" */
+        #selamatDatang {
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+            color: white; /* Ubah warna teks menjadi putih */
+        }
+
+        /* Tambahkan CSS untuk posisi tombol "Ganti Gambar" */
+        #gantiGambar {
+            margin-top: 20px; /* Ubah margin top agar terlihat jarak dengan teks "Selamat datang" */
+        }
+
         /* Tambahkan CSS untuk posisi tombol "Hapus Akun" */
         .form-group.buttons {
             display: flex;
@@ -211,14 +224,6 @@
     </section>
     <!-- Breadcrumb Section End -->
 
-    <div class="header">
-        <div class="navbar">
-            <div class="logo">
-                <p id="selamatDatang">Selamat datang</p>
-            </div>
-        </div>
-    </div>
-
     <div class="container rounded">
         <div class="shadow-box rounded row-gap-3">
             <div class="text-center mt-5">
@@ -230,6 +235,7 @@
                 />
             </div>
             <div class="text-center mt-3">
+                <p id="selamatDatang">Selamat datang</p>
                 <!-- Tambahkan input type file untuk mengganti gambar -->
                 <input
                     type="file"
