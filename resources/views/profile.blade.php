@@ -87,6 +87,13 @@
             height: auto;
         }
 
+        /* Tambahkan CSS untuk posisi tulisan "Selamat datang" */
+        #selamatDatang {
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
         /* Tambahkan CSS untuk posisi tombol "Hapus Akun" */
         .form-group.buttons {
             display: flex;
