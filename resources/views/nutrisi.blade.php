@@ -145,7 +145,7 @@
                     </div>
                     <div class="chart-calculate-form">
                         <p></p>
-                        <form action="{{ route('nutrisi') }}" method="POST">
+                        <!-- <form action="{{ route('nutrisi') }}" method="POST">
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-12 text-center">
@@ -164,7 +164,7 @@
                                 </div>
                             </div>
                             </div>
-                        </form>
+                        </form> -->
                         <br>
                     </div>
                     <table style="color:white;" border="1">

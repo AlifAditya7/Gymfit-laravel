@@ -11,10 +11,9 @@ class NutrisiController extends Controller
     /**
      * Show a list of all of the application's nutrisi.
      */
-    public function __invoke(Request $request): View
+    public function index(): View
     {
-        $kategori = $request->input('kategori');
-        $Nutrisi = DB::table('Nutrisi')->where('kategori', $kategori)->orderBy('nama', 'ASC')->get();
+        $Nutrisi = DB::table('Nutrisi')->get();
 
         return view('nutrisi', ['Nutrisi' => $Nutrisi]);
     }
