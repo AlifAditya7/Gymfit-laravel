@@ -137,7 +137,7 @@
 
 <?php
 include "";
-$id = $_GET['ISBN_ISSN'];
+$id = $_GET[''];
 $stmt = $koneksi->prepare("SELECT * FROM  WHERE  = ?");
 $stmt->bind_param("s", $id);
 $stmt->execute();
