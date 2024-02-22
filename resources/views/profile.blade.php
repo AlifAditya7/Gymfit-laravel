@@ -22,15 +22,14 @@
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo url('gymlife'); ?>/css/style.css" type="text/css">
-
     <style>
         body {
-            background-image:   ;
+            background-image: ;
             background-size: cover;
             background-repeat: no-repeat;
             font-family: Arial, sans-serif;
             color: #333;
-            background-color: #fff; /* Warna putih */
+            background-color: #fff;
             margin: 0;
             padding: 0;
         }
@@ -61,8 +60,8 @@
 
         /* Styling tambahan sesuai kebutuhan */
         .header {
-            background-color: #f8fc0800; /* Warna hitam */
-            color: #f8f9fa; /* Warna putih */
+            background-color: #f8fc0800;
+            color: #f8f9fa;
             padding: 10px 0;
             text-align: center;
             border-radius: 10px 10px 0 0;
@@ -115,7 +114,7 @@
         /* Menyesuaikan ukuran gambar tanpa mengubah proporsi */
         .img-thumbnail {
             max-width: 100%;
-            max-height: 300px; /* Atur tinggi maksimum sesuai kebutuhan */
+            max-height: 300px;
             width: auto;
             height: auto;
         }
@@ -192,22 +191,22 @@
                             <li class="active"><a href="./team.html">Profile</a></li>
                             <li><a href="#">Other</a>
                                 @if (Route::has('login') || Route::has('register'))
-                                <ul class="dropdown">
-                                    @auth
-                                    <li><a href="{{ url('/bmi') }}">BMI Calculate</a></li>
-                                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            {{ __('Log out') }}
-                                        </a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                            @csrf
-                                        </form></li>
-                                    @else
-                                    <li><a href="{{ route('login') }}">Log In</a></li>
-                                    @if (Route::has('register'))
-                                    <li><a href="{{ route('register') }}">Sign Up</a></li>
-                                    @endif
-                                    @endauth
-                                </ul>
+                                    <ul class="dropdown">
+                                        @auth
+                                            <li><a href="{{ url('/bmi') }}">BMI Calculate</a></li>
+                                            <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                    {{ __('Log out') }}
+                                                </a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                    @csrf
+                                                </form></li>
+                                        @else
+                                            <li><a href="{{ route('login') }}">Log In</a></li>
+                                            @if (Route::has('register'))
+                                                <li><a href="{{ route('register') }}">Sign Up</a></li>
+                                            @endif
+                                        @endauth
+                                    </ul>
                                 @endif
                             </li>
                         </ul>
@@ -262,7 +261,6 @@
                     id="fileInput"
                     accept="image/*"
                     style="display: none"
-                    onchange="previewImage(this)"
                 />
                 <button id="gantiGambar" class="btn btn-secondary">
                     Ganti Gambar
@@ -273,26 +271,34 @@
 
     <!-- Script untuk ganti gambar profil -->
     <script>
-        function previewImage(input) {
-            var file = input.files[0];
-            if (file) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    // Mengganti gambar dengan gambar yang baru diambil
-                    document.getElementById('gambarUtama').src = e.target.result;
-                };
-                reader.readAsDataURL(file);
-            }
-        }
+        $(document).ready(function () {
+            // Fungsi untuk mengganti gambar saat tombol diklik
+            $("#gantiGambar").click(function () {
+                // Klik input file saat tombol diklik
+                $("#fileInput").click();
+            });
 
-        // Fungsi untuk menghapus akun
-        document.getElementById('hapusAkun').addEventListener('click', function () {
-            if (confirm("Apakah Anda yakin ingin menghapus akun?")) {
-                localStorage.clear();
-                location.reload(); // Me-refresh halaman
-            }
+            // Fungsi untuk menangani perubahan file pada input file
+            $("#fileInput").change(function () {
+                var file = this.files[0];
+                if (file) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        // Mengganti gambar dengan gambar yang baru diambil
+                        $("#gambarUtama").attr("src", e.target.result);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Fungsi untuk menghapus akun
+            $("#hapusAkun").click(function () {
+                if (confirm("Apakah Anda yakin ingin menghapus akun?")) {
+                    localStorage.clear();
+                    location.reload(); // Me-refresh halaman
+                }
+            });
         });
-
     </script>
 
     <!-- FORM -->
