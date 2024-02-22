@@ -281,15 +281,13 @@
     <div class="container mt-3">
         <div class="card">
             <div class="card-body">
-                <form action="{{ route('update-profile') }}" method="POST">
-                    @csrf
+                <form>
                     <div class="form-group mt-3">
                         <label for="nama">Nama</label>
                         <input
                             type="text"
                             class="form-control"
                             id="nama"
-                            name="nama"
                             placeholder="Masukkan nama Anda"
                         />
                     </div>
@@ -301,7 +299,6 @@
                             max="200"
                             class="form-control"
                             id="beratBadan"
-                            name="berat_badan"
                             placeholder="Masukkan berat badan Anda"
                         />
                     </div>
@@ -313,15 +310,16 @@
                             max="200"
                             class="form-control"
                             id="tinggiBadan"
-                            name="tinggi_badan"
                             placeholder="Masukkan tinggi badan Anda"
                         />
                     </div>
 
                     <div class="form-group mt-3">
-                        <label for="tingkatKesulitan">Tingkat Kesulitan</label>
+                        <label for="tingkatKesulitan"
+                            >Tingkat Kesulitan</label
+                        >
                         <select
-                            name="tingkat_kesulitan"
+                            name="tingkatKesulitan"
                             id="tingkatKesulitan"
                             class="form-control"
                         >
